@@ -68,8 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\Main_BLL.cs" />
+    <Compile Include="Model\ClassInfo.cs" />
     <Compile Include="Utils\ExcelHelper.cs" />
-    <Compile Include="Model\FileInfo.cs" />
+    <Compile Include="Model\FileInfoModel.cs" />
     <Compile Include="Utils\Utility.cs" />
     <Compile Include="View\Forget_Page.cs">
       <SubType>Form</SubType>

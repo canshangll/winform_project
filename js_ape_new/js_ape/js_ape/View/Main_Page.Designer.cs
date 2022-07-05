@@ -42,6 +42,7 @@ namespace js_ape
             this.cb_dept = new System.Windows.Forms.ComboBox();
             this.lbl_dept = new System.Windows.Forms.Label();
             this.dgv_data = new System.Windows.Forms.DataGridView();
+            this.ofd_Excel = new System.Windows.Forms.OpenFileDialog();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +52,7 @@ namespace js_ape
             this.EndWeeks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WeekSchool = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SectionNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ofd_Excel = new System.Windows.Forms.OpenFileDialog();
+            this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,7 +213,8 @@ namespace js_ape
             this.startWeek,
             this.EndWeeks,
             this.WeekSchool,
-            this.SectionNum});
+            this.SectionNum,
+            this.Notes});
             this.dgv_data.Location = new System.Drawing.Point(149, 74);
             this.dgv_data.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_data.Name = "dgv_data";
@@ -220,6 +222,12 @@ namespace js_ape
             this.dgv_data.RowTemplate.Height = 23;
             this.dgv_data.Size = new System.Drawing.Size(972, 428);
             this.dgv_data.TabIndex = 28;
+            // 
+            // ofd_Excel
+            // 
+            this.ofd_Excel.FileName = "openFileDialog1";
+            this.ofd_Excel.Filter = "\"所有文件(*.*)|*.*|Excel文件(*.xls)|*.xls|Excel文件(*.xlsx)|*.xlsx\"";
+            this.ofd_Excel.Title = "\"请打开符合格式的Excel文件\"";
             // 
             // Column1
             // 
@@ -280,11 +288,11 @@ namespace js_ape
             this.SectionNum.MinimumWidth = 6;
             this.SectionNum.Name = "SectionNum";
             // 
-            // ofd_Excel
+            // Notes
             // 
-            this.ofd_Excel.FileName = "openFileDialog1";
-            this.ofd_Excel.Filter = "\"所有文件(*.*)|*.*|Excel文件(*.xls)|*.xls|Excel文件(*.xlsx)|*.xlsx\"";
-            this.ofd_Excel.Title = "\"请打开符合格式的Excel文件\"";
+            this.Notes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Notes.HeaderText = "备注";
+            this.Notes.Name = "Notes";
             // 
             // Main_Page
             // 
@@ -329,6 +337,7 @@ namespace js_ape
         private System.Windows.Forms.ComboBox cb_dept;
         private System.Windows.Forms.Label lbl_dept;
         private System.Windows.Forms.DataGridView dgv_data;
+        private System.Windows.Forms.OpenFileDialog ofd_Excel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
@@ -338,6 +347,6 @@ namespace js_ape
         private System.Windows.Forms.DataGridViewTextBoxColumn EndWeeks;
         private System.Windows.Forms.DataGridViewTextBoxColumn WeekSchool;
         private System.Windows.Forms.DataGridViewTextBoxColumn SectionNum;
-        private System.Windows.Forms.OpenFileDialog ofd_Excel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
     }
 }

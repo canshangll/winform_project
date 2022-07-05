@@ -55,5 +55,18 @@ namespace js_ape.Utils
             CloseHandle(vHandle);
             return false;
         }
+
+        /// <summary>
+        /// 去除字符串换行、空格等
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string CutSL(string str)
+        {
+            str = str.Replace("\n", "").Replace("\t", "").Replace("\r", "").Replace(" ","");
+            return str;
+        }
+
+
     }
 }

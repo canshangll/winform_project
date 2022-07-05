@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using js_ape.Utils;
 using js_ape.BLL;
+using js_ape.Model;
 
 
 namespace js_ape
@@ -45,7 +46,24 @@ namespace js_ape
                 return;
             }
             Main_BLL bll = new Main_BLL();
-            bll.DataProcessing(FilePath);
+            Dictionary<ClassInfo, List<FileInfoModel>> dic = bll.DataProcessing(FilePath);
+            foreach (var item in dic)
+            {
+                int index = dgv_data.Rows.Add();
+                dgv_data.Rows[index].Cells[0].Value = item.Key.Term;
+                dgv_data.Rows[index].Cells[1].Value = item.Key.Dep;
+                dgv_data.Rows[index].Cells[2].Value = item.Key.Classname;
+                foreach (var list in item.Value)
+                {
+                    dgv_data.Rows[index].Cells[3].Value = list.Course;
+                    dgv_data.Rows[index].Cells[4].Value = list.Teachername;
+                    dgv_data.Rows[index].Cells[5].Value = list.Beginweek;
+                    dgv_data.Rows[index].Cells[6].Value = list.Overweek;
+                    dgv_data.Rows[index].Cells[7].Value = list.Weekclass;
+                    dgv_data.Rows[index].Cells[8].Value = 2;
+                    dgv_data.Rows[index].Cells[9].Value = list.Notes;
+                }
+            }
 
         }
     }
